@@ -24,7 +24,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     axios
-      .delete(`http://localhost:3000/api/conversations/${conversationId}`)
+      .delete(`/api/conversations/${conversationId}`)
       .then(() => {
         onClose();
         router.push("/conversations");

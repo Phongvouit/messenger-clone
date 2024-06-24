@@ -20,7 +20,7 @@ const Body: React.FC<BodyProps> = ({ initialMessages }) => {
 
   useEffect(() => {
     axios.post(
-      `http://localhost:3000/api/conversations/${conversationId}/seen`
+      `/api/conversations/${conversationId}/seen`
     );
   }, [conversationId]);
 
@@ -30,7 +30,7 @@ const Body: React.FC<BodyProps> = ({ initialMessages }) => {
 
     const messageHandler = (message: FullMessageType) => {
       axios.post(
-        `http://localhost:3000/api/conversations/${conversationId}/seen`
+        `/api/conversations/${conversationId}/seen`
       );
 
       setMessages((current) => {

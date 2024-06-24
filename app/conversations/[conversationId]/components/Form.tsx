@@ -24,14 +24,14 @@ const Form = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setValue("message", "", { shouldValidate: true });
 
-    axios.post("http://localhost:3000/api/messages", {
+    axios.post("/api/messages", {
       ...data,
       conversationId,
     });
   };
 
   const handleUpload = (result: any) => {
-    axios.post("http://localhost:3000/api/messages", {
+    axios.post("/api/messages", {
       image: result?.info?.secure_url,
       conversationId,
     });
