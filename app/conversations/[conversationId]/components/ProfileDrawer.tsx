@@ -45,6 +45,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     return isActive ? "Active" : "Offline";
   }, [data, isActive]);
 
+  console.log(data);
+
   return (
     <>
       <ConfirmModal
@@ -256,7 +258,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                     className="
                                 mt-1
                                 text-sm
-                                text-gray-100
+                                text-gray-900
                                 sm:col-span-2
                                 "
                                   >
@@ -293,6 +295,41 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                     </dd>
                                   </div>
                                 </>
+                              )}
+                              {data.isGroup && (
+                                <div>
+                                  <dt
+                                    className="
+                                    mb-2
+                                text-sm
+                                font-medium
+                                text-gray-500
+                                sm:w-40
+                                sm:flex-shrink-0
+                                "
+                                  >
+                                    Members
+                                  </dt>
+                                  <div>
+                                    {data.users.map((user) => (
+                                      <div
+                                        className="flex gap-2 items-center mb-1"
+                                        key={user?.id}
+                                      >
+                                        <Avatar user={user} />
+                                        <dd
+                                          className="
+                                text-sm
+                                text-gray-900
+                                sm:col-span-2
+                                "
+                                        >
+                                          {user?.name}
+                                        </dd>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
                               )}
                             </dl>
                           </div>

@@ -117,6 +117,9 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
               </p>
             )}
           </div>
+          <div>
+            
+          </div>
           <p
             className={clsx(
               `

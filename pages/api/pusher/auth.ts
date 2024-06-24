@@ -3,7 +3,6 @@ import { getServerSession } from "next-auth";
 
 import { pusherServer } from "@/app/libs/pusher";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { request } from "http";
 
 export default async function handler(
   request: NextApiRequest,
