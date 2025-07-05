@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Real-Time Messenger Clone
 
-## Getting Started
+## Project Description
 
-First, run the development server:
+This project is a state-of-the-art real-time messenger clone, developed using powerful and cutting-edge technologies to create a fully functional and visually stunning chat application. It aims to provide an immersive and interactive user experience by leveraging real-time communication capabilities
 
+## Key Features
+
+The messenger clone includes a wide range of features:
+• Real-time Messaging and Notifications: Achieved through the integration of Pusher, ensuring an interactive user experience.
+• Secure User Authentication: Implemented using NextAuth.js to manage user authentication and protect sensitive data.
+• Social Login: Supports convenient sign-up and login via popular platforms like Google and GitHub.
+• Efficient Form Handling: Utilizes React Hook Form for seamless management of user input.
+• Image Uploads: Leverages Cloudinary for managing and uploading images within the application.
+• Robust Database Solution: Combines Prisma with MongoDB for an efficient and scalable backend capable of handling many users and conversations.
+• Conversation Management: Users can create personal and group chats. Conversations are ordered by the last message sent, and the view automatically scrolls to the newest message. It also shows real-time "seen" status for messages.
+• User Status Display: Shows online/offline status of users in real-time using Pusher's presence channels.
+• User Settings: Allows users to update their name and avatar.
+• Conversation Deletion: Provides functionality to delete conversations with a confirmation step.
+• Image Modals: Sent images can be opened in a larger modal view upon clicking.
+• Optimized User Experience: Incorporates loading states to improve application responsiveness, reducing "dead moments".
+
+## Technologies Used
+
+The project is built with a modern technology stack, including:
+• Frontend Framework: Next.js, React.js
+• Styling: Tailwind CSS, Headless UI
+• Database: Prisma, MongoDB
+• Authentication: NextAuth.js (supporting Google and GitHub OAuth, and email/password credentials)
+• Real-time Communication: Pusher (for real-time messages, notifications, and presence tracking)
+• Image Upload: Cloudinary
+• Form Handling: React Hook Form
+
+## How to Set Up and Run the Project
+
+Clone the project
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install Dependencies
+```bash
+npm install
+```
+Configure Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Configure next.config.js
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Update tailwind.config.js
 
-## Learn More
+Push Prisma Schema to Database
+```bash
+npx prisma db push
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run the Application
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
