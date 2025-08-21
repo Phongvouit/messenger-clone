@@ -11,7 +11,7 @@
 - **MongoDB** → lưu user, conversation, message  
 - **NextAuth** → xác thực người dùng  
 - **Pusher** → realtime messaging (publish/subscribe events)  
-- **Tailwind CSS → UI  
+- **Tailwind CSS** → UI  
 
 ---
 
