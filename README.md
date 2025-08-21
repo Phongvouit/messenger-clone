@@ -1,8 +1,7 @@
 # 💬 Real-time Chat App
 
 ## 📌 Mô tả dự án
-Ứng dụng chat real-time cho phép người dùng đăng ký, đăng nhập, trò chuyện 1-1 hoặc theo nhóm.  
-Realtime sẽ sử dụng **Pusher Channels** để publish/subscribe tin nhắn thay vì quản lý WebSocket server thủ công.
+Ứng dụng chat real-time cho phép người dùng đăng ký, đăng nhập, trò chuyện 1-1 hoặc theo nhóm.
 
 ---
 
