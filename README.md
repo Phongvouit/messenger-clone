@@ -1,78 +1,42 @@
-# Real-Time Messenger Clone
+# 💬 Real-time Chat App
 
-## Project Description
+## 📌 Mô tả dự án
+Ứng dụng chat real-time cho phép người dùng đăng ký, đăng nhập, trò chuyện 1-1 hoặc theo nhóm.  
+Realtime sẽ sử dụng **Pusher Channels** để publish/subscribe tin nhắn thay vì quản lý WebSocket server thủ công.
 
-This project is a state-of-the-art real-time messenger clone, developed using powerful and cutting-edge technologies to create a fully functional and visually stunning chat application. It aims to provide an immersive and interactive user experience by leveraging real-time communication capabilities
+---
 
-## Key Features
+## ⚙️ Công nghệ
+- **Next.js (App Router)** → frontend + backend routes  
+- **Prisma ORM** → quản lý database schema  
+- **MongoDB** → lưu user, conversation, message  
+- **NextAuth** → xác thực người dùng  
+- **Pusher** → realtime messaging (publish/subscribe events)  
+- **Tailwind CSS + Shadcn UI** → UI  
 
-The messenger clone includes a wide range of features:
+---
 
-• **Real-time Messaging and Notifications**: Achieved through the integration of Pusher, ensuring an interactive user experience.
+## 🏗️ Chức năng chính
 
-• **Secure User Authentication**: Implemented using NextAuth.js to manage user authentication and protect sensitive data.
+### 🔑 Authentication
+- Đăng ký/đăng nhập (NextAuth + Prisma)  
+- Quản lý session người dùng  
 
-• **Social Login**: Supports convenient sign-up and login via popular platforms like Google and GitHub.
+### 💬 Chat 1-1 & Chat nhóm
+- Tạo conversation mới (có thể là **private** hoặc **group**)  
+- Gửi/nhận tin nhắn **real-time** qua Pusher  
 
-• **Efficient Form Handling**: Utilizes React Hook Form for seamless management of user input.
+### ⚡ Realtime messaging
+Mỗi khi gửi tin nhắn, API sẽ:  
+1. Lưu tin nhắn vào **MongoDB** (qua Prisma)  
+2. Gửi sự kiện **Pusher (`pusher.trigger`)** đến channel của conversation  
+3. Client đang subscribe channel sẽ nhận tin nhắn mới ngay lập tức  
 
-• **Image Uploads**: Leverages Cloudinary for managing and uploading images within the application.
+### 🎨 UI/UX
+- **Sidebar**: danh sách conversation  
+- **Chat panel**: hiển thị message stream, realtime update  
+- **Input box**: gõ & gửi tin nhắn  
 
-• **Robust Database Solution**: Combines Prisma with MongoDB for an efficient and scalable backend capable of handling many users and conversations.
-
-• **Conversation Management**: Users can create personal and group chats. Conversations are ordered by the last message sent, and the view automatically scrolls to the newest message. It also shows real-time "seen" status for messages.
-
-• **User Status Display**: Shows online/offline status of users in real-time using Pusher's presence channels.
-
-• **User Settings**: Allows users to update their name and avatar.
-
-• **Conversation Deletion**: Provides functionality to delete conversations with a confirmation step.
-
-• **Image Modals**: Sent images can be opened in a larger modal view upon clicking.
-
-
-## Technologies Used
-
-The project is built with a modern technology stack, including:
-• **Frontend Framework**: Next.js, React.js
-
-• **Styling**: Tailwind CSS, Headless UI
-
-• **Database**: Prisma, MongoDB
-
-• **Authentication**: NextAuth.js (supporting Google and GitHub OAuth, and email/password credentials)
-
-• **Real-time Communication**: Pusher (for real-time messages, notifications, and presence tracking)
-
-• **Image Upload**: Cloudinary
-
-• **Form Handling**: React Hook Form
-
-## How to Set Up and Run the Project
-
-1. Clone the project
-```bash
-https://github.com/Phongvouit/messenger-clone.git
-```
-
-2. Install Dependencies
-```bash
-npm install
-```
-3. Configure Environment Variables
-
-4. Configure next.config.js
-
-5. Update tailwind.config.js
-
-6. Push Prisma Schema to Database
-```bash
-npx prisma db push
-```
-
-7. Run the Application
-```bash
-npm run dev
-```
+---
 
 
